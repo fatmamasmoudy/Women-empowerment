@@ -1,0 +1,19 @@
+{
+"userName": "admin",
+"email": "admin@gmail.com",
+"password": "admin",
+"name": "admin",
+"lastName": "admin",
+"active": true,
+"role":"ADMIN"
+}
+
+{
+"userName": "superadmin",
+"email": "superadmin@gmail.com",
+"password": "superadmin",
+"name": "superadmin",
+"lastName": "superadmin",
+"active": true,
+"role":"SUPERADMIN"
+}

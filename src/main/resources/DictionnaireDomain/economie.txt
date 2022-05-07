@@ -1,0 +1,1 @@
+achat,vente,acquisition,action,adaptation

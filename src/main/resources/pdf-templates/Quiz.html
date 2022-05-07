@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div style="margin-right: 0pt; margin-bottom: 50pt;background-color: #82E0AA" th:text="'Total des points : '+ ${note}+'/20'"/>
+ 
+  <div th:each="quest : ${questions}">
+  		
+            <div style="font-style: oblique; font-size: 2em;"  th:text="${questions.indexOf(quest)+1}+'- '+${quest.question}"></div>
+            
+            <div th:if= "${quest.reponse.equals(quest.proposition1) and quest.reponse.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: green" th:text="${quest.proposition1}"></div>
+            <div th:if= "${{not quest.reponse.equals(quest.proposition1)} and quest.proposition1.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: red" th:text="${quest.proposition1}"></div>
+            <div th:if= "${not quest.writedResponse.equals(quest.proposition1)}"class="pl-4 text-left" th:text="${quest.proposition1}"></div>
+            <div th:if= "${quest.reponse.equals(quest.proposition2) and quest.reponse.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: green" th:text="${quest.proposition2}"></div>
+            <div th:if= "${{not quest.reponse.equals(quest.proposition2)} and quest.proposition2.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: red" th:text="${quest.proposition2}"></div>
+            <div th:if= "${not quest.writedResponse.equals(quest.proposition2)}"class="pl-4 text-left" th:text="${quest.proposition2}"></div>
+            <div th:if= "${quest.reponse.equals(quest.proposition3) and quest.reponse.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: green" th:text="${quest.proposition3}"></div>
+            <div th:if= "${{not quest.reponse.equals(quest.proposition3)} and quest.proposition3.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: red" th:text="${quest.proposition3}"></div>
+            <div th:if= "${not quest.writedResponse.equals(quest.proposition3)}"class="pl-4 text-left" th:text="${quest.proposition3}"></div>
+            
+            <div th:if= "${{not quest.reponse.equals(quest.proposition1)} and quest.proposition1.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: blue" th:text="'Reponse correcte : '+${quest.reponse}"></div>  
+            <div th:if= "${{not quest.reponse.equals(quest.proposition2)} and quest.proposition2.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: blue" th:text="'Reponse correcte : '+${quest.reponse}"></div>
+            <div th:if= "${{not quest.reponse.equals(quest.proposition3)} and quest.proposition3.equals(quest.writedResponse)}"class="pl-4 text-left" style="color: blue" th:text="'Reponse correcte : '+${quest.reponse}"></div>
+            
+              
+        </div>
+  
+  
+ </div>
+  
+
+</body>
+</html>
